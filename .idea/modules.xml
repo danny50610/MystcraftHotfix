@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MystcraftHotfix.iml" filepath="$PROJECT_DIR$/MystcraftHotfix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MystcraftHotfix_api.iml" filepath="$PROJECT_DIR$/.idea/modules/MystcraftHotfix_api.iml" group="MystcraftHotfix" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MystcraftHotfix_main.iml" filepath="$PROJECT_DIR$/.idea/modules/MystcraftHotfix_main.iml" group="MystcraftHotfix" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MystcraftHotfix_test.iml" filepath="$PROJECT_DIR$/.idea/modules/MystcraftHotfix_test.iml" group="MystcraftHotfix" />
+    </modules>
+  </component>
+</project>

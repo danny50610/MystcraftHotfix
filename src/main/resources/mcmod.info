@@ -1,0 +1,18 @@
+[
+    {
+        "modid": "mystcraft_hotfix",
+        "name": "Mystcraft Hotfix",
+        "description": "Hotfix Mystcraft bug (https://github.com/XCompWiz/Mystcraft-Issues/issues/244)",
+        "version": "${version}",
+        "mcversion": "${mcversion}",
+        "url": "",
+        "updateUrl": "",
+        "authorList": [
+            "danny50610"
+        ],
+        "credits": "danny50610",
+        "logoFile": "",
+        "screenshots": [],
+        "dependencies": []
+    }
+]
