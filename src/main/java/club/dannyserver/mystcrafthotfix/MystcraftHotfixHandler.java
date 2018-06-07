@@ -13,10 +13,19 @@ public class MystcraftHotfixHandler {
         DimensionType dimensionType = player.world.provider.getDimensionType();
 
         if (dimensionType != null && dimensionType.getName().equals("Mystcraft")) {
-            player.dimension = 0;
-            player.posX = 0;
-            player.posY = 100;
-            player.posZ = 0;
+            player.dimension = MystcraftHotfixConfig.respawnDimension;
+            player.posX = MystcraftHotfixConfig.respawnPosX;
+            player.posY = MystcraftHotfixConfig.respawnPosY;
+            player.posZ = MystcraftHotfixConfig.respawnPosZ;
+
+            MystcraftHotfix.logger.info(
+                    String.format("Set player to (%f, %f, %f) (dim: %d)",
+                            player.posX,
+                            player.posY,
+                            player.posZ,
+                            player.dimension
+                    )
+            );
         }
     }
 
