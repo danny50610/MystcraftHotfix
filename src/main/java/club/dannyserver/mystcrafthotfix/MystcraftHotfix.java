@@ -15,7 +15,7 @@ import org.apache.logging.log4j.Logger;
 )
 public class MystcraftHotfix {
 
-    public static Logger logger;
+    static Logger logger;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
