@@ -10,8 +10,7 @@ public class CapabilityHandler {
     public static final ResourceLocation LOGOUT_POS_CAP = new ResourceLocation("mystcraft_hotfix", "logout_pos");
 
     @SubscribeEvent
-    public void attachCapability(AttachCapabilitiesEvent<Entity> event)
-    {
+    public void attachCapability(AttachCapabilitiesEvent<Entity> event) {
         if (!(event.getObject() instanceof EntityPlayer)) {
             return;
         }

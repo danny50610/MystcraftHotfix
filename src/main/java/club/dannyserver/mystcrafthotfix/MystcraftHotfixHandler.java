@@ -1,10 +1,7 @@
 package club.dannyserver.mystcrafthotfix;
 
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.DimensionType;
-import net.minecraft.world.World;
-import net.minecraftforge.common.util.ITeleporter;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 

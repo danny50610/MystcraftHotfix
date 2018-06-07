@@ -7,8 +7,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
 
-import java.util.concurrent.Callable;
-
 @Mod(
         modid = "mystcraft_hotfix",
         name = "MystcraftHotfix",
