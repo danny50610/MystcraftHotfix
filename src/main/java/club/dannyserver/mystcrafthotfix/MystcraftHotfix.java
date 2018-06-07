@@ -1,10 +1,13 @@
 package club.dannyserver.mystcrafthotfix;
 
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
+
+import java.util.concurrent.Callable;
 
 @Mod(
         modid = "mystcraft_hotfix",
@@ -24,6 +27,10 @@ public class MystcraftHotfix {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+        CapabilityManager.INSTANCE.register(ILogoutPos.class, new LogoutPosStorage(), LogoutPos::new);
+        MinecraftForge.EVENT_BUS.register(new CapabilityHandler());
+
+
         if (MystcraftHotfixConfig.enable) {
             MinecraftForge.EVENT_BUS.register(new MystcraftHotfixHandler());
         }
