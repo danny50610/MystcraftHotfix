@@ -13,4 +13,6 @@ public class MystcraftHotfixConfig {
     public static double respawnPosY = 100;
 
     public static double respawnPosZ = 0;
+
+    public static boolean teleportToOriginalDimension = true;
 }

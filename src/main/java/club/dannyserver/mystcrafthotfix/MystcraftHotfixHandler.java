@@ -20,19 +20,25 @@ public class MystcraftHotfixHandler {
             logoutPos.setPosZ(player.posZ);
             logoutPos.setNeedTeleport(true);
 
+            MystcraftHotfix.logger.info(String.format("Save player(%s) logout pos. (%f, %f, %f) (dim: %d)", player.getName(),
+                    player.posX,
+                    player.posY,
+                    player.posZ,
+                    player.dimension
+            ));
+
             player.dimension = MystcraftHotfixConfig.respawnDimension;
             player.posX = MystcraftHotfixConfig.respawnPosX;
             player.posY = MystcraftHotfixConfig.respawnPosY;
             player.posZ = MystcraftHotfixConfig.respawnPosZ;
 
-            MystcraftHotfix.logger.info(
-                    String.format("Set player to (%f, %f, %f) (dim: %d)",
-                            player.posX,
-                            player.posY,
-                            player.posZ,
-                            player.dimension
-                    )
-            );
+            MystcraftHotfix.logger.info(String.format("Set player(%s) to (%f, %f, %f) (dim: %d).",
+                    player.getName(),
+                    player.posX,
+                    player.posY,
+                    player.posZ,
+                    player.dimension
+            ));
         }
     }
 
@@ -40,13 +46,21 @@ public class MystcraftHotfixHandler {
     public void PlayerLoggedOutEvent(PlayerEvent.PlayerLoggedInEvent event) {
         EntityPlayer player = event.player;
         ILogoutPos logoutPos = player.getCapability(LogoutPosProvider.LOGOUT_POS_CAP, null);
-        if (logoutPos.isNeedTeleport()) {
+        if (MystcraftHotfixConfig.teleportToOriginalDimension && logoutPos.isNeedTeleport()) {
             logoutPos.setNeedTeleport(false);
             player.changeDimension(logoutPos.getDimension(), (world, entity, yaw) -> {
                 entity.posX = logoutPos.getPosX();
                 entity.posY = logoutPos.getPosY();
                 entity.posZ = logoutPos.getPosZ();
             });
+
+            MystcraftHotfix.logger.info(String.format("Teleport player(%s) to (%f, %f, %f) (dim: %d).",
+                    player.getName(),
+                    player.posX,
+                    player.posY,
+                    player.posZ,
+                    player.dimension
+            ));
         }
     }
 }
