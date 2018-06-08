@@ -43,7 +43,7 @@ public class MystcraftHotfixHandler {
     }
 
     @SubscribeEvent
-    public void PlayerLoggedOutEvent(PlayerEvent.PlayerLoggedInEvent event) {
+    public void PlayerLoggedInEvent(PlayerEvent.PlayerLoggedInEvent event) {
         EntityPlayer player = event.player;
         ILogoutPos logoutPos = player.getCapability(LogoutPosProvider.LOGOUT_POS_CAP, null);
         if (MystcraftHotfixConfig.teleportToOriginalDimension && logoutPos.isNeedTeleport()) {
